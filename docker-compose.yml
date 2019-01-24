@@ -12,6 +12,8 @@ services:
       - ./elk_backups:/var/backups
     networks:
       - elk
+    restart: always
+
   apm:
     image: docker.elastic.co/apm/apm-server:6.2.4
     ports:
@@ -22,6 +24,7 @@ services:
       - elk
     depends_on:
       - elk
+    restart: always
 
 networks:
   elk:
