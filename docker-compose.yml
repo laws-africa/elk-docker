@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  elk:
+    image: sebp/elk
+    ports:
+      - "5601:5601"
+      - "9200:9200"
+      - "5044:5044"
+    volumes:
+      - ./elk_data:/var/lib/elasticsearch
+      - ./elk_backups:/var/backups
+    networks:
+      - elk
+  apm:
+    image: docker.elastic.co/apm/apm-server:6.2.4
+    ports:
+      - "8200:8200"
+    volumes:
+      - ./apm/apm-server.yml:/usr/share/apm-server/apm-server.yml
+    networks:
+      - elk
+    depends_on:
+      - elk
+
+networks:
+  elk:
+    driver: bridge
