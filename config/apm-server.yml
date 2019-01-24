@@ -2,4 +2,4 @@ apm-server:
   host: "0.0.0.0:8200"
 
 output.elasticsearch:
-  hosts: ['elk:9200']
+  hosts: ['elasticsearch:9200']
