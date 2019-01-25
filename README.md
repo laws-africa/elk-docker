@@ -17,3 +17,16 @@ This runs:
 The DNS entry `elk.int.laws.africa` should be set to the AWS-internal IP address of this instance.
 
 AWS firewalls prevent any of these from being accessed from outside the network.
+
+## Installation
+
+Install [docker-compose](https://linuxize.com/post/how-to-install-and-use-docker-compose-on-ubuntu-18-04/):
+
+1. `sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose`
+2. `sudo chmod +x /usr/local/bin/docker-compose`
+
+Install this package:
+
+1. `git clone https://github.com/laws-africa/elk-docker.git`
+2. `cd elk-docker`
+5. `docker-compose up -d`
