@@ -13,6 +13,8 @@ services:
     volumes:
       - './es_data:/usr/share/elasticsearch/data'
       - './config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml'
+    environment:
+      - "ES_JAVA_OPTS=-Xms2g -Xmx2g"
     healthcheck:
       test: curl -s http://localhost:9200 >/dev/null; if [[ $$? == 52 ]]; then echo 0; else echo 1; fi
       interval: 30s
