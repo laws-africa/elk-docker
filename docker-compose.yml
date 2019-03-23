@@ -37,21 +37,6 @@ services:
       retries: 5
     restart: always
 
-  logstash:
-    image: docker.elastic.co/logstash/logstash:${TAG}
-    container_name: logstash
-    volumes:
-      - './config/logstash.yml:/usr/share/logstash/config/logstash.yml'
-      - './config/logstash-pipelines:/usr/share/logstash/pipelines'
-    networks: ['elk']
-    depends_on: ['elasticsearch']
-    healthcheck:
-      test: bin/logstash -t
-      interval: 60s
-      timeout: 50s
-      retries: 5
-    restart: always
-
   apmserver:
     image: docker.elastic.co/apm/apm-server:${TAG}
     container_name: apm_server
