@@ -47,7 +47,7 @@ services:
       - './config/apm-server.yml:/usr/share/apm-server/apm-server.yml'
     depends_on: ['elasticsearch', 'kibana']
     healthcheck:
-      test: curl http://localhost:8200/healthcheck >/dev/null; if [[ $$? == 52 ]]; then echo 0; else echo 1; fi
+      test: curl http://localhost:8200 >/dev/null; if [[ $$? == 52 ]]; then echo 0; else echo 1; fi
       interval: 30s
       timeout: 10s
       retries: 5
