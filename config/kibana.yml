@@ -1,3 +1,4 @@
 server.host: "0.0.0.0"
+server.publicBaseUrl: "https://metrics.laws.africa"
 elasticsearch.hosts:
   - "http://elasticsearch:9200"
