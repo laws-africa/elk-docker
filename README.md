@@ -1,6 +1,6 @@
 # Laws.Africa Metrics Processing Stack
 
-Configuration files for Laws.Africa ELK stack, using Elasticsearch (E), Logstash (L), Kibana (K) and Elastic APM. Adapted from https://github.com/elastic/stack-docker. An overview of the APM setup is available at https://www.elastic.co/guide/en/apm/get-started/current/overview.html
+Configuration files for Laws.Africa ELK stack, using Elasticsearch (E) and Kibana (K). Adapted from https://github.com/elastic/stack-docker. An overview of the APM setup is available at https://www.elastic.co/guide/en/apm/get-started/current/overview.html
 
 This sets up a collection of services to process metrics and display them in a Kibana dashboard.
 
@@ -20,13 +20,8 @@ AWS firewalls prevent any of these from being accessed from outside the network.
 
 ## Installation
 
-Install [docker-compose](https://linuxize.com/post/how-to-install-and-use-docker-compose-on-ubuntu-18-04/):
-
-1. `sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose`
-2. `sudo chmod +x /usr/local/bin/docker-compose`
-
 Install this package:
 
 1. `git clone https://github.com/laws-africa/elk-docker.git`
 2. `cd elk-docker`
-5. `docker-compose up -d`
+5. `docker compose up -d`
