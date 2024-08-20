@@ -24,4 +24,5 @@ Install this package:
 
 1. `git clone https://github.com/laws-africa/elk-docker.git`
 2. `cd elk-docker`
-5. `docker compose up -d`
+3. Set the TAG variable to specify the ES version to use in `.env`: `echo TAG=7.17.5 > .env`
+4. `docker compose up -d`
